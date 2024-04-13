@@ -27,7 +27,7 @@ public class Practice2 {
 
     private static int[] solution(int[] arr) {
         // 중복값 제거
-        /* Arrays 클래스의 stream() 메서드를 통해서 sstream으로 변환
+        /* Arrays 클래스의 stream() 메서드를 통해서 stream으로 변환
         *
         *  해당 stream의 프리미티브 타입인 IntStream의 데이터를 boxed()를 통해
         *  레퍼런스 타입인 Inteager로 변환하고, distinct() 메서드를 통해 중복을 제거
