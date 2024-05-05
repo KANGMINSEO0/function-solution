@@ -7,4 +7,9 @@ public class Practice3 {
         int[] progresses = {93, 30, 55};
         int[] speeds = {1, 30, 5};
     }
+
+    public static int[] solution(int[] progresses, int[] speeds) {
+
+        return progresses;
+    }
 }
