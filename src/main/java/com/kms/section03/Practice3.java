@@ -1,5 +1,8 @@
 package com.kms.section03;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class Practice3 {
     // 문제16 기능개발
 
@@ -9,6 +12,12 @@ public class Practice3 {
     }
 
     public static int[] solution(int[] progresses, int[] speeds) {
+
+        Queue<Integer> answer = new ArrayDeque<>();
+
+        int n = progresses.length;
+        // 각 작업의 배포 가능일 계산
+        int[] dqysLeft = new int[n];
 
         return progresses;
     }
