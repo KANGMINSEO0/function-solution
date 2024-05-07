@@ -17,7 +17,12 @@ public class Practice3 {
 
         int n = progresses.length;
         // 각 작업의 배포 가능일 계산
-        int[] dqysLeft = new int[n];
+        int[] daysLeft = new int[n];
+        for (int i = 0; i < n; i++) {
+            daysLeft[i] = (int) Math.ceil((100.0 - progresses[i]) / speeds[i]);
+        }
+        int count = 0; // 배포될 작업의 수 카운트
+        int maxDay = daysLeft[0];   // 현재 배폳괼 작업 중 가장 늦게 배포될 작업의 가능일
 
         return progresses;
     }
