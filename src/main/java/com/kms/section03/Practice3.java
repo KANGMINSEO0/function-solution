@@ -35,6 +35,8 @@ public class Practice3 {
             }
         }
 
-        return progresses;
+        answer.add(count);
+
+        return answer.stream().mapToInt(Integer::intValue).toArray();
     }
 }
