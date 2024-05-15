@@ -10,6 +10,12 @@ public class Practice3 {
     public static void main(String[] args) {
         int[] progresses = {93, 30, 55};
         int[] speeds = {1, 30, 5};
+
+        int[] result = solution(progresses, speeds);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i]);
+        }
     }
 
     public static int[] solution(int[] progresses, int[] speeds) {
@@ -35,7 +41,7 @@ public class Practice3 {
             }
         }
 
-        answer.add(count);
+        answer.add(count);  // 마지막으로 카운트된 ㅊ작업물을 함께 배포
 
         return answer.stream().mapToInt(Integer::intValue).toArray();
     }
