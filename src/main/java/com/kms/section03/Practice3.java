@@ -41,7 +41,7 @@ public class Practice3 {
             }
         }
 
-        answer.add(count);  // 마지막으로 카운트된 ㅊ작업물을 함께 배포
+        answer.add(count);  // 마지막으로 카운트된 작업물을 함께 배포
 
         return answer.stream().mapToInt(Integer::intValue).toArray();
     }
