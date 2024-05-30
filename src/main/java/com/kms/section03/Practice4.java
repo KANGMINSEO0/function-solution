@@ -14,8 +14,16 @@ public class Practice4 {
     *  기존에 주어진 카드 뭉치의 단어 순서는 바꿀 수 없음
     *
     * */
+    public static void main(String[] args) {
+        String[] cards1 = {"i", "drink", "water"};
+        String[] cards2 = {"want", "to"};
+        String[] goal = {"i", "want", "to", "drink", "water"};
+        String result = solution(cards1, cards2, goal);
 
-    public String solution(String[] cards1, String[] cards2, String[] goal) {
+        System.out.println("result = " + result);
+    }
+
+    public static String solution(String[] cards1, String[] cards2, String[] goal) {
 
         // cards와 goal을 deque로 변환
         ArrayDeque<String> cardsDeque1 = new ArrayDeque<>(Arrays.asList(cards1));
@@ -23,7 +31,22 @@ public class Practice4 {
         ArrayDeque<String> goalDeque = new ArrayDeque<>(Arrays.asList(goal));
 
         // goalDeque에 문자열이 남아 있으면 계속 반복
+        while (!goalDeque.isEmpty()) {
+            if (!cardsDeque1.isEmpty() && cardsDeque1.peekFirst().equals(goalDeque.peekFirst())) {
+                cardsDeque1.pollFirst();
+                goalDeque.pollFirst();
+            }
+            // cardsDeque2의 front와 일치하는 경우
+            else if (!cardsDeque2.isEmpty() && cardsDeque2.peekFirst().equals(goalDeque.peekFirst())) {
+                cardsDeque2.pollFirst();
+                goalDeque.pollFirst();
+            }
+            else {
+                break;
+            }
+        }
 
-        return "";
+        // goal이 비었으면 "Yes" 아니면 "No"를 반환
+        return goalDeque.isEmpty() ? "YES" : "NO";
     }
 }
