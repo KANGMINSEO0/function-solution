@@ -1,6 +1,5 @@
 package com.kms.section04;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 public class Practice2 {
