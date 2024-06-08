@@ -15,6 +15,11 @@ public class Practice3 {
             hashMap.put(string, hashMap.getOrDefault(string, 0) + 1);
         }
 
+        // 참가한 선수들의 이름을 키로 하는 값을 1씩 감소
+        for (String string : participant) {
+            // 완주하지 못한 서수를 찾으면 반환
+        }
+
         return "";
     }
 
