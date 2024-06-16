@@ -4,6 +4,13 @@ import java.util.HashMap;
 
 public class Practice3 {
 
+    public static void main(String[] args) {
+        String[] participant = {"leo", "kiko", "eden"};
+        String[] completion = {"eden", "kiko"};
+
+        System.out.println(solution(participant, completion));
+    }
+
     // 문19 완주하지 못한 선수
 
     public static String solution(String[] participant, String[] completion) {
@@ -18,9 +25,12 @@ public class Practice3 {
         // 참가한 선수들의 이름을 키로 하는 값을 1씩 감소
         for (String string : participant) {
             // 완주하지 못한 서수를 찾으면 반환
+            if (hashMap.getOrDefault(string, 0) == 0) {
+                return string;
+            }
+            hashMap.put(string, hashMap.get(string) - 1);
         }
-
-        return "";
+        return null;
     }
 
 }
