@@ -1,7 +1,10 @@
 package com.kms.section04;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class Practice6 {
 
@@ -26,6 +29,8 @@ public class Practice6 {
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
         int[] plays = {500, 600, 150, 800, 2500};
 
+        System.out.println(Arrays.toString(solution(genres, plays)));
+
     }
 
     public static int[] solution(String[] genres, int[] plays) {
@@ -43,7 +48,21 @@ public class Practice6 {
             genresMap.get(genre).add(new int[]{i, play});
             playMap.put(genre, playMap.get(genre) + play);
         }
-        return plays;
+
+        ArrayList<Integer> answer = new ArrayList<>();
+
+        // 총 재생 횟수가 많은 장르순으로 내림차순 정렬
+        Stream<Map.Entry<String, Integer>> sortedGenre = playMap.entrySet().stream().sorted((o1, o2) -> Integer.compare(o2.getValue(), o1.getValue()));
+
+        // 각 장르 내에서 노래를 재생 횟수 순으로 정렬해 최대 2곡까지 선택
+        sortedGenre.forEach(entry -> {
+            Stream<int[]> sortedSongs = genresMap.get(entry.getKey()).stream()
+                    .sorted((o1, o2) -> Integer.compare(o2[1], o1[1]))
+                    .limit(2);
+            sortedSongs.forEach(song -> answer.add(song[0]));
+        });
+
+        return answer.stream().mapToInt(Integer::intValue).toArray();
     }
 
 
