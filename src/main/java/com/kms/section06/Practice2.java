@@ -11,7 +11,7 @@ public class Practice2 {
     * 연구실에 있는 N마리의 포켓몬 중 N/2마리 가져 갈 수 있음
     * 포켓몬은 종류에 따라 번호를 붙여 구분
     * 가장 많은 종류의 포켓몬을 선택하는 방법을 찾아 포켓몬 종류 번호의 개수를 반환
-    * 
+    *
     * */
     public static void main(String[] args) {
 
