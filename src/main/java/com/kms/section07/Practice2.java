@@ -1,5 +1,7 @@
 package com.kms.section07;
 
+import java.util.ArrayList;
+
 public class Practice2 {
 
     // 문 35 너비 우선 탐색 순회
@@ -13,4 +15,7 @@ public class Practice2 {
     public static void main(String[] args) {
         
     }
+
+    // 인접 리스트 저장할 ArrayList 배열
+    private static ArrayList<Integer>[] adjList;
 }
