@@ -18,4 +18,13 @@ public class Practice2 {
 
     // 인접 리스트 저장할 ArrayList 배열
     private static ArrayList<Integer>[] adjList;
+
+    // 방문 여부를 저장할 boolean 배열
+    private static boolean[] visited;
+    private static ArrayList<Integer> answer;
+
+    private static int[] solution(int[][] graph, int start, int n) {
+
+        return new int[0];
+    }
 }
