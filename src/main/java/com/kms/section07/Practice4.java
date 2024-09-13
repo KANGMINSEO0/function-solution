@@ -14,7 +14,17 @@ public class Practice4 {
     private static final int[] ry = {1, -1, 0, 0};
 
     private static class Node {
-        
+
+        int r, c;
+        public Node(int r, int c) {
+            this.r = r;
+            this.c = c;
+        }
+    }
+
+    public int solution(int[][] maps) {
+
+        return 0;
     }
 
     
